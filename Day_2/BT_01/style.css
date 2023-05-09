@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+.margin-right-left {
+    margin: 0 40px;
+}
+
+/* 
+.full {
+    width: 100%;
+    margin: 0;
+} */
+
+
+
+.navbar {
+    text-align: center;
+    margin: 20px;
+}
+
+.navbar span {
+    margin-right: 26px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    background-color: #e4e0e0;
+}
+
+.banner .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner .banner-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.banner .banner-desc {
+    color: #636363;
+}
+
+/* Body */
+.body__contact {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.body__contact .contact-input {
+    width: 250px;
+    height: 30px;
+    border: 2px solid #e4e0e0;
+    border-radius: 4px;
+    margin-right: 22px;
+    padding-left: 10px;
+}
+
+.body__contact button {
+    height: 30px;
+    width: 92px;
+    background-color: #1a1818;
+    border-radius: 4px;
+    border: none;
+}
+
+.body__contact .contact-subscribe p {
+    color: #eee;
+    font-size: 10px;
+}
+
+.body__card {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    border: 1px solid #1a1818;
+    width: 250px;
+    height: 250px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .card-detail {
+    position: absolute;
+    width: 100%;
+    top: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card .card-detail p {
+    color: #eee;
+}
+
+.card .card-detail p:first-child {
+    margin-bottom: 20px;
+}
+
+.card .card-detail .desc {
+    font-size: 20px;
+}
