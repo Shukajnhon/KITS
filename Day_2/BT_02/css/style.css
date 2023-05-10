@@ -78,8 +78,7 @@ a {
     margin-bottom: 30px;
     width: 65px;
     height: 65px;
-
-
+    cursor: pointer;
 }
 
 .side-bar__icon-left .logo img {
@@ -117,6 +116,7 @@ a {
     border-radius: 50%;
     position: relative;
     margin-bottom: 24px;
+    cursor: pointer;
 
 }
 
@@ -128,6 +128,10 @@ a {
 }
 
 /* sidebar right */
+.sideBar-right {
+    width: 100%;
+}
+
 .side-bar-right {
     display: flex;
     flex-direction: column;
@@ -202,7 +206,7 @@ a {
 }
 
 .container-right .content {
-    margin: 60px 150px 0 100px;
+    padding: 60px 150px 0 100px;
 }
 
 header.header {
@@ -220,7 +224,7 @@ header.header {
 .header .content-avatar {
     height: 50px;
     border-radius: 50%;
-
+    cursor: pointer;
 }
 
 .content-avatar img {
@@ -263,19 +267,20 @@ header.header {
     width: 50%;
 }
 
-/* 
+
 .email-form .email-input {
     position: relative;
-} */
-/* 
+}
+
 .email-form #checkbox {
     width: 16px;
     height: 16px;
     position: absolute;
-    right: 16%;
-    bottom: 54%;
-    transform: translate(-50%, -50%);
-} */
+    right: 20px;
+    bottom: 15px;
+    accent-color: green;
+    /* transform: translate(-50%, -50%); */
+}
 
 
 .form-control .city-form .select,
@@ -305,6 +310,7 @@ header.header {
     width: 180px;
     height: 40px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .form-control .button .cancel-btn {
@@ -318,4 +324,40 @@ header.header {
     border: 1px solid var(--primary-color);
     background-color: var(--primary-color);
     color: #fff;
+}
+
+
+/* Media Query */
+@media (max-width: 768px) {
+    .container-right .content {
+        padding: 60px 90px 0 0;
+    }
+
+    .container .container-left {
+        border: none;
+    }
+
+    .container-left .sideBar-right {
+        display: none;
+    }
+
+    /* Content Right */
+    .form-control .name-form {
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    .name-form .firstname,
+    .name-form .lastname {
+        width: 100%;
+    }
+
+    .form-control .city-form .select,
+    .form-control .button {
+        width: 100%;
+    }
+
+    .form-control .button {
+        column-gap: 20px;
+    }
 }
