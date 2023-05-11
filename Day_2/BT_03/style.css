@@ -1,0 +1,56 @@
+.wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+.img {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: all 0.2s;
+    transform-origin: bottom left;
+}
+
+.wrap:hover .img1 {
+    transform: rotate(10deg);
+}
+
+.wrap:hover .img2 {
+    transform: rotate(30deg);
+}
+
+.wrap:hover .img3 {
+    transform: rotate(60deg);
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotatey(0deg)
+    }
+
+    to {
+        transform: rotateY(360deg)
+    }
+}

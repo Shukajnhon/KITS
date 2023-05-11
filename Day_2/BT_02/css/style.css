@@ -324,6 +324,12 @@ header.header {
     border: 1px solid var(--primary-color);
     background-color: var(--primary-color);
     color: #fff;
+    transition: all 0.3s;
+}
+
+.form-control .button .save-btn:hover {
+    transform: scale(1.2);
+
 }
 
 
