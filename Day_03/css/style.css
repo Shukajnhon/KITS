@@ -391,18 +391,28 @@ li {
     background-color: var(--primary-color);
     position: relative;
     padding-bottom: 30px;
+    margin-top: 80px;
 }
 
 .categories-content .categories-card-wrap {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    padding-bottom: 40px;
 }
 
-.categories-content .categories-card-wrap .card-1 {
+.categories-content .categories-card-wrap .card-1,
+.categories-content .categories-card-wrap .card-3 {
     padding-bottom: 40px;
-    position: absolute;
-    top: 0;
+    transform: translateY(-60px);
+}
+
+.categories-content .categories-card-wrap .card-2 {
+    transform: translateY(60px);
+}
+
+.categories-card-info {
+    margin-top: 10px;
 }
 
 .categories-card-wrap .categories-card {
@@ -425,7 +435,7 @@ li {
     width: 112px;
     height: 40px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 56px auto 20px;
 }
 
 .categories-btn p {
