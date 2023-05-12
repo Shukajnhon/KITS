@@ -25,13 +25,12 @@ a {
 
 .wrapper {
     background-color: var(--background-color);
+}
+
+.margin-left-right {
     padding: 30px 70px;
 }
 
-.wrapper:not(.categories) {
-    background-color: var(--background-color);
-    padding: 30px 70px;
-}
 
 ul {
     text-align: center;
@@ -391,6 +390,7 @@ li {
 .categories-content {
     background-color: var(--primary-color);
     position: relative;
+    padding-bottom: 30px;
 }
 
 .categories-content .categories-card-wrap {
@@ -447,10 +447,21 @@ li {
 }
 
 .review .review-card-wrap {
+    overflow: scroll;
     display: flex;
-    justify-content: flex-end;
     column-gap: 40px;
+    scrollbar-color: var(--primary-color);
 }
+
+.review .review-card-wrap::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+.review .review-card-wrap::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
 
 .review-card {
     padding: 0 40px;
@@ -458,8 +469,8 @@ li {
 
 .review .review-card-wrap .review-card {
     background-color: var(--primary-color);
-    width: 600px;
-    height: 300px;
+    min-width: 700px;
+    min-height: 300px;
     border-radius: 10px;
 }
 
@@ -512,6 +523,26 @@ li {
     padding-left: 90px;
 }
 
+.footer-left .top-left p,
+.footer-left .top-left h2,
 .footer-left .top-left {
     margin-bottom: 10px;
+}
+
+.footer-left-icon {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.footer-right table {
+    width: 83%;
+    height: 136px;
+    text-align: left;
+}
+
+.footer .copy {
+    padding-top: 40px;
+    margin-left: 90px;
 }
