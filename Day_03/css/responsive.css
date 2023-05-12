@@ -1,0 +1,227 @@
+/* Tablet */
+@media (max-width: 768px) {
+    .margin-left-right {
+        padding: 14px 26px;
+    }
+
+    /* Header */
+    .nav li {
+        padding: 0 14px;
+    }
+
+    .top-icon-list {
+        display: none;
+    }
+
+    .header-icon.tablet {
+        display: block;
+    }
+
+    /* content */
+    #content {
+        margin: 0;
+    }
+
+    .banner {
+        height: 250px;
+    }
+
+    /* banner */
+    .banner-top {
+        width: 100%;
+    }
+
+    .banner-top .banner-title {
+        font-size: 24px;
+    }
+
+    .banner-content .banner-content-detail .content-numb {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .banner-content .banner-content-detail .content-text {
+        padding-top: 4px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    /* Search  */
+    .banner-search .banner-search-input {
+        width: 100%;
+    }
+
+    .banner-search button {
+        top: 4px;
+        right: 4px;
+        height: 34px;
+        width: 34px;
+        cursor: pointer;
+    }
+
+    .banner-search button img {
+        width: 100%;
+    }
+
+    .banner-right .banner-right__img {
+        width: 70%;
+    }
+
+    /* Best sell */
+    .best-sell {
+        margin-top: 30px;
+    }
+
+    .best-sell-left .best-sell-info .card-title {
+        font-size: 22px;
+    }
+
+    .best-sell-left .best-sell-info .card-btn {
+        width: 108px;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+    }
+
+    .best-sell-info .card-btn img {
+        margin-right: 6px;
+        margin-left: 10px;
+    }
+
+    /* categories */
+    .categories-card img {
+        width: 90%;
+    }
+
+    .categories-content .categories-card-wrap {
+        margin: 0 12px;
+    }
+
+    /* Footer */
+    .footer-left .top-left h2 {
+        font-size: 22px;
+    }
+
+    .footer-left-icon img {
+        width: 36px;
+        height: 36px;
+        margin-right: 8px;
+    }
+
+    .footer-right {
+        padding-left: 0;
+    }
+
+    .footer-right table {
+        height: 136px;
+    }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+
+    /* header */
+    .header .logo {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .nav li:first-child {
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .nav li a {
+        font-size: 16px;
+    }
+
+    /* Banner */
+    .banner .banner-left {
+        padding: 20px 0 0 12px;
+    }
+
+    .banner-right .banner-right__img {
+        width: 82%;
+    }
+
+    .banner-right .banner-right__img {
+        right: 14px;
+    }
+
+    /* Best sell */
+    .best-sell-left .best-sell-info .card-desc {
+        font-size: 13px;
+    }
+
+    .best-sell-left .best-sell-info .card-btn {
+        width: 100%;
+    }
+
+    .card-btn p {
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .best-sell__card-wrap .best-sell-card {
+        margin-bottom: 28px;
+    }
+
+    .best-sell-info .card-btn img {
+        width: 16px;
+    }
+
+    .card-detail .card-detail-text,
+    .card-detail .card-detail-price {
+        font-size: 14px;
+    }
+
+    /* About us */
+    .about-item-top .about-item-icon-wrap {
+        width: 48px;
+        height: 48px;
+    }
+
+    .about-item-top .about-item-text,
+    .about-item .about-item-desc {
+        font-size: 12px;
+    }
+
+    /* footer */
+
+    .footer {
+        margin-top: 30px;
+        height: max-content;
+    }
+
+    .footer-content-wrap {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        margin-top: 16px;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-left .top-left p {
+        font-size: 15px;
+    }
+
+    .footer-left-icon {
+        width: 52%;
+    }
+
+    .footer .copy {
+        padding-top: 20px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+}

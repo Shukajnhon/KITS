@@ -66,6 +66,10 @@ li {
     /* padding: 0.5em; */
 }
 
+.btn {
+    cursor: pointer;
+}
+
 .banner,
 .article {
     background-color: #efefef;
@@ -83,6 +87,7 @@ li {
     font-size: 24px;
     font-weight: 400;
     line-height: 27.2px;
+    cursor: pointer;
 }
 
 .nav li {
@@ -105,6 +110,11 @@ li {
 
 .top-icon-list .top-icon-list-item {
     padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+.header-icon.tablet {
+    display: none;
 }
 
 .top-icon-list .top-icon-list-item:last-child {
@@ -197,6 +207,7 @@ li {
     border: none;
     padding: 10px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .banner-right {
@@ -518,7 +529,7 @@ li {
 .footer {
     margin-top: 66px;
     background-color: var(--primary-color);
-    height: 300px;
+    padding-bottom: 20px;
 }
 
 .footer-content-wrap {
@@ -546,10 +557,18 @@ li {
     margin: 15px 0;
 }
 
+.footer-left-icon img {
+    cursor: pointer;
+}
+
 .footer-right table {
     width: 83%;
     height: 136px;
     text-align: left;
+}
+
+.footer-right table td {
+    cursor: pointer;
 }
 
 .footer .copy {
