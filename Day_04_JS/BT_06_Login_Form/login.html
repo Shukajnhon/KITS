@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     <div class="login-content">
                         <h2 class="login-title">Log In</h2>
 
-                        <form action="" class="form-control">
+                        <form action="#" class="form-control">
                             <div class="form-group">
                                 <label for="">Username</label>
                                 <input type="text" name="" id="username" placeholder="Username">
@@ -42,12 +42,15 @@
                                     <label class="form-label-forgot-password" for="">Forgot Password?</label>
                                 </div>
                                 <input type="password" name="" id="password" placeholder="Enter password">
-                                <i class="fa-solid fa-eye-slash eys-close"></i>
-                                <span class="form-message"></span>
+                                <i class="fa-solid fa-eye-slash eyes-close" onclick="showPassword()"></i>
+                                <i class="fa-solid fa-eye eyes-open" onclick="hidePassword()"></i>
+                                <span class="form-password-message"></span>
+
                             </div>
 
+
                             <div class="btn">
-                                <button class="btn-login">
+                                <button type="button" class="btn-login" onclick="logIn()">
                                     LOGIN
                                     <i class="fas fa-arrow-right"></i>
                                 </button>
@@ -103,7 +106,7 @@
         </div>
     </div>
 
-
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
