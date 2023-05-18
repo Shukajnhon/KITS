@@ -9,3 +9,10 @@
     height: 300px;
     cursor: pointer;
 }
+
+/* Detail page */
+.item-detail {
+    width: 500px;
+    height: max-content;
+    margin: 0 auto;
+}
