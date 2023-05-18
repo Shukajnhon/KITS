@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-1: #C0DBEA;
+    --color-2: #6096B4;
+    --black-color: #000;
+    --btn-color: #D885A3;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    height: 100vh;
+    z-index: -1;
+    /* background-color: #4158D0;
+    background-image: linear-gradient(to right, #4158D0 0%, #C850C0 46%, #FFCC70 100%); */
+}
+
+.login-container {
+    max-width: 1920px;
+
+
+}
+
+.login-form-wrap {
+    max-width: 1425px;
+    display: flex;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 24px 1px rgba(0, 0, 0, 0.1);
+    /* padding-bottom: 40px; */
+}
+
+.login__left,
+.login__right {
+    width: 50%;
+}
+
+/* Login Left */
+.login__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.login-content {
+    margin: 0 auto;
+}
+
+.login-title {
+    margin-top: 80px;
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.form-control {
+    min-width: 478px;
+}
+
+.form-control .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 300;
+}
+
+.form-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group .form-label-forgot-password {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.form-group input {
+    width: 100%;
+    height: 46px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--color-1);
+    padding-left: 10px;
+}
+
+.form-password {
+    position: relative;
+}
+
+.eys-close {
+    position: absolute;
+    top: 56%;
+    right: 20px;
+    cursor: pointer;
+    color: var(--btn-color);
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+}
+
+.btn-login {
+    width: 150px;
+    height: 46px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: var(--btn-color);
+    cursor: pointer;
+}
+
+.btn p.or {
+    color: var(--color-2);
+}
+
+.btn-social {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-group {
+    width: 125px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.social-group button {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid var(--color-2);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.dont-have-account {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dont-have-account-text {
+    margin-bottom: 40px;
+}
+
+.dont-have-account-text a {
+    margin-left: 20px;
+    color: var(--btn-color);
+}
+
+
+/*  Login right */
+.login__right {
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    background-color: var(--color-1);
+    z-index: -1;
+    border-radius: 2rem;
+}
+
+.login-right-wrap .images {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 500px;
+    height: 500px;
+    z-index: 20;
+}
+
+.girl-laptop {
+    width: 100%;
+}
