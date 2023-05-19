@@ -240,6 +240,9 @@ header.header {
 }
 
 .header .content-avatar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 50px;
     border-radius: 50%;
     position: relative;
