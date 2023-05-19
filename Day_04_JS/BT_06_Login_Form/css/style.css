@@ -242,12 +242,47 @@ header.header {
 .header .content-avatar {
     height: 50px;
     border-radius: 50%;
-    cursor: pointer;
+    position: relative;
 }
 
 .content-avatar img {
     width: 100%;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.content-avatar:hover .logOut {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+.logOut {
+    visibility: hidden;
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: 70px;
+    right: 0;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out 0s;
+    opacity: 0;
+    box-shadow: rgba(66, 62, 62, 0.35) 0px 5px 15px;
+}
+
+.logOut p {
+    line-height: 30px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.logOut::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100px;
+    height: 20px;
 }
 
 /* form */

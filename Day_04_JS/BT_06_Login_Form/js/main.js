@@ -21,8 +21,14 @@ const logIn = () => {
   const usernameValue = document.querySelector('#username').value;
   const passwordValue = document.querySelector('#password').value;
   const errMessage = document.querySelector('.form-password-message');
+  const getToken = localStorage.getItem('token');
 
   try {
+    const user = 'kminchelle';
+    const pass = '0lelplR';
+    if (getToken) {
+      return window.location.assign(`index.html`);
+    }
     fetch('https://dummyjson.com/auth/login', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -37,17 +43,28 @@ const logIn = () => {
         errMessage.innerText = 'Wrong password or username';
         return false;
       }
-      res.json().then((res) => console.log(res));
-      console.log('success');
-      console.log(res);
-      // window.location.assign(`index.html`);
+      res.json().then((res) => {
+        // console.log(res.token);
+        localStorage.setItem('token', res.token);
+        window.location.assign(`index.html`);
+        console.log('success');
+      });
     });
   } catch (error) {
     alert(error.message);
   }
 };
 
-// =====================================Index
+// LogOut
+const logOut = () => {
+  const isToken = localStorage.getItem('token');
+  if (isToken) {
+    localStorage.removeItem('token');
+    window.location.assign('login.html');
+  }
+};
+
+// ===================================== INDEX =====================================
 // Khi người dùng ấn nút mũi tên ở chỗ setting, tab setting đóng lại, nhấn vào side bar cam thì hiện ra thẻ setting
 const arrowSettingLeft = document.querySelector(
   '.side-bar-right__setting-arrow-left'
