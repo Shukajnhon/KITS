@@ -229,3 +229,92 @@ a {
 .girl-laptop {
     width: 100%;
 }
+
+/* Responsive */
+/* extra large */
+@media (max-width: 1200px) {
+    .login-form-wrap {
+        width: 994px;
+    }
+
+    .login-title {
+        margin-top: 30px;
+        font-size: 52px;
+        text-align: center;
+    }
+
+    .form-control {
+        min-width: 416px;
+    }
+
+    /* right */
+    .login-right-wrap .images {
+        width: 400px;
+        height: 500px;
+    }
+
+    .login-right-wrap .images {
+        top: 58%;
+    }
+
+    .girl-laptop img {
+        width: 500px;
+        height: 400px;
+    }
+
+    .cactus img {
+        width: 200px;
+        height: 400px;
+    }
+
+}
+
+
+/* Large */
+@media (max-width: 992px) {
+    .login-form-wrap {
+        width: 854px;
+    }
+
+    .form-control {
+        min-width: 370px;
+    }
+
+    .btn {
+        row-gap: 24px;
+    }
+
+    /* right */
+    .login-right-wrap .images {
+        width: 324px;
+        height: 486px;
+    }
+
+    .girl-laptop img {
+        width: 392px;
+        height: 400px;
+    }
+
+    .cactus img {
+        width: 166px;
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .login-form-wrap {
+        width: 450px;
+    }
+
+
+    .login__left {
+        width: 100%;
+    }
+
+    .login__right {
+        display: none;
+    }
+
+}
