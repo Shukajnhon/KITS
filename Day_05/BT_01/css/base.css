@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --color-1: #1565C0;
+    --color-2: #29B6F6;
+    --color-3: #2D2D2D;
+    --color-4: #474747;
+    --color-5: #DFDFDF;
+}
+
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 50px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+    border-radius: 10px;
+}

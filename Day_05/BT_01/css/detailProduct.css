@@ -293,6 +293,10 @@ a {
     justify-content: space-between;
 }
 
+.img-thumb-items {
+    max-width: 80px;
+}
+
 .img-thumb img {
     width: 100%;
     border-radius: 20px;
@@ -342,7 +346,8 @@ a {
 }
 
 .price {
-    width: 58px;
+    max-width: 200px;
+    padding: 0 14px;
     height: 46px;
     display: flex;
     justify-content: center;
@@ -403,7 +408,6 @@ a {
 }
 
 /* Responsive */
-
 @media (max-width: 992px) {
 
     .container {
@@ -437,7 +441,6 @@ a {
         margin-left: 40px;
     }
 }
-
 
 @media (max-width: 768px) {}
 
