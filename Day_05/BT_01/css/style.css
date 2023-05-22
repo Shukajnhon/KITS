@@ -71,9 +71,6 @@
 
 /* >=768px */
 @media (max-width: 768px) {
-    header {
-        background-color: rgb(141, 54, 69);
-    }
 
     .card {
         width: 44%;
@@ -82,9 +79,6 @@
 
 /* >=576px */
 @media (max-width: 576px) {
-    header {
-        background-color: pink;
-    }
 
     .card {
         width: 100%;
