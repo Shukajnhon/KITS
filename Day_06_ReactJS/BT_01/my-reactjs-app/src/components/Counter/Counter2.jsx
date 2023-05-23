@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import styled from 'styled-components';
 
-const Counter2 = ({name}) => {
+const Counter2 = ({className, name}) => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -9,7 +10,7 @@ const Counter2 = ({name}) => {
     // Gọi API
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 0);
   }, [loading, count]);
 
   const onDecrease = () => {
@@ -26,14 +27,32 @@ const Counter2 = ({name}) => {
         <div>Loadingggggg 2222222</div>
       ) : (
         <>
-          <h1>Hello {name}</h1>
-          <button className="count-btn" onClick={() => onDecrease()}>
-            -
-          </button>
-          <span className="count">{count}</span>
-          <button className="count-btn" onClick={() => onIncrease()}>
-            +
-          </button>
+          <Wrapper className={className} count={count}>
+            <Title>
+              Hello {name}
+              <span> !!! </span>
+            </Title>
+            <button className="count-btn" onClick={() => onDecrease()}>
+              -
+            </button>
+            <span className="count">{count}</span>
+            <button className="count-btn" onClick={() => onIncrease()}>
+              +
+            </button>
+
+            {/*  */}
+            <StyleTitle>
+              Hello {name}
+              <span> !!! </span>
+            </StyleTitle>
+            <button className="count-btn" onClick={() => onDecrease()}>
+              -
+            </button>
+            <span className="count">{count}</span>
+            <button className="count-btn" onClick={() => onIncrease()}>
+              +
+            </button>
+          </Wrapper>
         </>
       )}
     </div>
@@ -41,3 +60,25 @@ const Counter2 = ({name}) => {
 };
 
 export {Counter2};
+
+const Wrapper = styled.div`
+  padding: 4em;
+  background: papayawhip;
+  .count {
+    color: ${(props) => (props.count < 5 ? 'pink' : 'blue')};
+  }
+`;
+
+const Title = styled.div`
+  font-size: 30px;
+  text-align: center;
+  color: pink;
+  span {
+    color: blue;
+  }
+`;
+
+// Ghi đè css
+const StyleTitle = styled(Title)`
+  color: #bf4f74;
+`;

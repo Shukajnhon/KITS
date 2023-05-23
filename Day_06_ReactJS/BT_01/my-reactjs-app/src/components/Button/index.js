@@ -1,2 +1,3 @@
 import {RedButton} from './RebButton';
-export {RedButton};
+import {Button} from './Button';
+export {RedButton, Button};
