@@ -42,7 +42,7 @@ const StyleButton = styled.button`
     props.borderColor ? `1px solid ${props.borderColor}` : 'none'};
   border-radius: ${(props) =>
     props.borderRadius ? `${props.borderRadius}px` : 'none'};
-  background-color: ${(props) => props.backgroundColor};
+  background: ${(props) => props.bgColor};
   font-weight: 600;
   font-size: 18px;
   line-height: 21px;

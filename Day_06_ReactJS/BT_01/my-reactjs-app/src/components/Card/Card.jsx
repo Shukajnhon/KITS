@@ -2,10 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import {Button} from 'components/Button';
 import ethImg from 'assets/images/eth-img.svg';
+import ethSmall from 'assets/images/eth-small-icon.svg';
 
-const Card = ({title, amount, content, percent}) => {
+import plusIcon from 'assets/images/plusIcon.svg';
+import arrowRightIcon from 'assets/images/arrow-right-icon.svg';
+
+const Card = ({
+  title,
+  amount,
+  content,
+  percent,
+  sidebar,
+  bgColor,
+  textCenter,
+  colorTitle,
+  ...rest
+}) => {
   return (
-    <StyledCard>
+    <StyledCard
+      bgColor={bgColor}
+      textCenter={textCenter}
+      colorTitle={colorTitle}
+      sidebar={sidebar}
+      className="card"
+      {...rest}
+    >
       <div className="title">{title}</div>
       {amount ? (
         <div className="amount-wrapper">
@@ -15,19 +36,51 @@ const Card = ({title, amount, content, percent}) => {
         </div>
       ) : (
         <div className="content-wrapper">
-          <span className="content">{content}</span>
-          <span className="content-text">%</span>
+          <span
+            className={sidebar ? 'content-card-sidebar content' : 'content '}
+          >
+            {content}
+          </span>
+          {sidebar ? '' : <span className="content-text">%</span>}
         </div>
       )}
-      <Button
-        percent={percent}
-        borderRadius={12}
-        width={115}
-        borderColor="#E9E9E9"
-        textColor="#747475"
-      >
-        {Math.abs(percent)}%
-      </Button>
+
+      {sidebar ? (
+        <div className="card-sidebar">
+          <img className="eth-img-small" src={ethSmall} alt="eth" />
+          <span className="eth-text">ETH</span>
+        </div>
+      ) : (
+        ''
+      )}
+
+      {sidebar ? (
+        <Button width={196} height={49} borderRadius={12} bgColor="#FFFFFF">
+          <span className="btn-content-wrap">
+            <div className="btn-content-img">
+              <img
+                className="btn-content-iconPlus"
+                src={plusIcon}
+                alt="plusIcon"
+              />
+            </div>
+            <span>Top Up Balance</span>
+            <div className="btn-content-img">
+              <img src={arrowRightIcon} alt="arrowRightIcon" />
+            </div>
+          </span>
+        </Button>
+      ) : (
+        <Button
+          percent={percent}
+          borderRadius={12}
+          width={115}
+          borderColor="#E9E9E9"
+          textColor="#747475"
+        >
+          {Math.abs(percent)}%
+        </Button>
+      )}
     </StyledCard>
   );
 };
@@ -38,16 +91,17 @@ const StyledCard = styled.div`
   /* width: 164px;
   height: 167px; */
   padding: 24px;
-  background-color: #fff;
+  background: ${(props) => (props.bgColor ? props.bgColor : '#fff')};
   border-radius: 12px;
   font-size: 12px;
   line-height: 16px;
   /* Text/color2 */
 
-  color: #747475;
+  /* color: #747475; */
+
   .title {
-    color: #747475;
-    text-align: left;
+    color: ${(props) => (props.sidebar ? '#e5e5e5' : '#747475')};
+    text-align: ${(props) => (props.textCenter ? 'center' : 'left')};
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
@@ -75,5 +129,48 @@ const StyledCard = styled.div`
 
   .eth-img {
     margin-right: 4px;
+  }
+
+  .content-card-sidebar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .card-sidebar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .eth-img-small {
+    margin-right: 6px;
+  }
+
+  .eth-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .btn-content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .btn-content-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-content-img .btn-content-iconPlus {
+    width: 100%;
+  }
+
+  .btn-content-wrap span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #27262e;
   }
 `;
