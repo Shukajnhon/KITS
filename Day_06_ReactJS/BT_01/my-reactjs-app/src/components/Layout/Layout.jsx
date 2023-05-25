@@ -12,8 +12,10 @@ export const Layout = ({children}) => {
         </div>
       </div>
       <div className="right">
-        <Header></Header>
-        <div className="content">{children}</div>
+        <div className="right-container">
+          <Header></Header>
+          <div className="content">{children}</div>
+        </div>
       </div>
     </LayoutStyle>
   );
@@ -36,5 +38,8 @@ const LayoutStyle = styled.div`
     width: 80%;
     background-color: #caeae6;
     /* min-height: 100vh; */
+  }
+  .right-container {
+    padding: 30px 40px;
   }
 `;

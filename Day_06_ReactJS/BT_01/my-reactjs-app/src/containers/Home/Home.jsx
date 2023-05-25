@@ -1,16 +1,22 @@
 import React from 'react';
-import {Card} from 'components/Card';
-import {Link} from 'react-router-dom';
-import {Header} from 'components/Header';
-
+import styled from 'styled-components';
 import {Layout} from 'components/Layout';
+import {Banner} from 'components/Banner';
+import {CardNFT} from 'components/Card';
 const Home = () => {
   return (
     <div>
       <Layout>
-        <div className="App-header">
-          <Header></Header>
+        <div className="content-wrap">
+          <ContentLeftStyle className="content-left">
+            <Banner text="Discover, Create and Sell Your Own NFT."></Banner>
+            <CardNFT></CardNFT>
+          </ContentLeftStyle>
 
+          <ContentRightStyle className="content-right"></ContentRightStyle>
+        </div>
+
+        {/* <div className="App-header">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -27,20 +33,28 @@ const Home = () => {
           <Card title="Spending" amount={2.0} percent={8.1}></Card>
           <Card title="ROI" percent={-5.1} content="+14.02"></Card>
           <Card title="Estimated" amount={7.0} percent={3.2}></Card>
-          {/* <Button percent={-11}>11%</Button>
-      <Button textColor="#000">11%</Button> */}
+          <Button percent={-11}>11%</Button>
+      <Button textColor="#000">11%</Button>
 
-          {/* <Counter name="Class Component"></Counter> */}
-          {/* <Counter2 name="Function Component"></Counter2> */}
-          {/* <StyledCounter name="Counter2"></StyledCounter> */}
-          {/* <Hello name="Hiếu" age={18}></Hello>
+          <Counter name="Class Component"></Counter>
+          <Counter2 name="Function Component"></Counter2>
+          <StyledCounter name="Counter2"></StyledCounter>
+          <Hello name="Hiếu" age={18}></Hello>
       <Hello name="Peter" age={8}></Hello>
       <Button></Button>
-      <RedButton></RedButton> */}
-        </div>
+      <RedButton></RedButton>
+        </div> */}
       </Layout>
     </div>
   );
 };
 
 export default Home;
+
+const ContentLeftStyle = styled.div`
+  width: 70%;
+`;
+
+const ContentRightStyle = styled.div`
+  width: 30%;
+`;

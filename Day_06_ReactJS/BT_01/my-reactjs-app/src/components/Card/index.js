@@ -1,2 +1,3 @@
 import {Card} from './Card';
-export {Card};
+import {CardNFT} from './CardNFT';
+export {Card, CardNFT};

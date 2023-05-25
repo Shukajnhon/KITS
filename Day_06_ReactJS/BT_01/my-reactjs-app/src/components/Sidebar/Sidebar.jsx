@@ -19,7 +19,7 @@ import {Card} from 'components/Card';
 // import {MarketIcon} from 'components/Icon';
 
 export const Sidebar = () => {
-  console.log(market);
+  // console.log(market);
   return (
     <SidebarStyled>
       <div className="logo">
