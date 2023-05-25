@@ -12,11 +12,14 @@ import sunIcon from 'assets/images/sun-icon.svg';
 import moonIcon from 'assets/images/moon-icon.svg';
 import otherIcon from 'assets/images/other-icon.svg';
 import styled from 'styled-components';
+
 import {Link} from 'react-router-dom';
 
 import {Card} from 'components/Card';
+// import {MarketIcon} from 'components/Icon';
 
 export const Sidebar = () => {
+  console.log(market);
   return (
     <SidebarStyled>
       <div className="logo">
@@ -35,7 +38,11 @@ export const Sidebar = () => {
           colortext="#5429FF"
         ></NavItem>
 
-        <NavItem path="market" text="Market" src={market}></NavItem>
+        {/* Market */}
+        <NavItem path="market" text="Market" src={market}>
+          {/* <MarketIcon stroke=""></MarketIcon> */}
+        </NavItem>
+
         <NavItem
           path="active-bids"
           text="Active Bids"
@@ -70,15 +77,17 @@ export const Sidebar = () => {
         <DarkmodeBox></DarkmodeBox>
       </div>
 
-      {/* Card box */}
-      <Card
-        title="Your Balance"
-        colorTitle="#E0DEE5"
-        content="1,034.02"
-        sidebar={true}
-        bgColor="linear-gradient(228.89deg, #5429FF 1.12%, #BBAAFF 100%)"
-        textCenter={true}
-      ></Card>
+      <div className="card-box-sidebar">
+        {/* Card box */}
+        <Card
+          title="Your Balance"
+          colorTitle="#E0DEE5"
+          content="1,034.02"
+          sidebar={true}
+          bgColor="linear-gradient(228.89deg, #5429FF 1.12%, #BBAAFF 100%)"
+          textCenter={true}
+        ></Card>
+      </div>
     </SidebarStyled>
   );
 };
@@ -103,13 +112,14 @@ const DarkmodeBox = () => {
 };
 
 // NavItem
-const NavItem = ({text, path, src, colortext}) => {
+const NavItem = ({text, path, colortext, src, children}) => {
   //   console.log(colortext);
   return (
     <NavItemStyle colortext={colortext}>
       <div className="nav-item">
         <div className="nav-icon">
           <img src={src} alt="icon" />
+          {children}
         </div>
         <div className="nav-link">
           <Link to={path}>{text}</Link>
@@ -230,6 +240,10 @@ const SidebarStyled = styled.div`
     font-size: 10px;
     font-weight: 700;
     color: #7a797d;
+  }
+
+  .dashboard-other {
+    margin-bottom: 100px;
   }
 `;
 

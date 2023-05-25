@@ -23,7 +23,7 @@ const LayoutStyle = styled.div`
   .sideBar {
     padding: 23px;
   }
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: #ddd;
   .left {
     float: left;
@@ -35,6 +35,6 @@ const LayoutStyle = styled.div`
     float: right;
     width: 80%;
     background-color: #caeae6;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }
 `;
