@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {Color} from 'components/Color';
 import googleIcon from 'assets/images/Google.svg';
@@ -7,6 +7,12 @@ import githubIcon from 'assets/images/github.svg';
 import backgroundLogin from 'assets/images/LoginImg.svg';
 
 const Login = ({srcImg}) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <LoginWrapStyle>
       <div class="login-container">
@@ -36,23 +42,26 @@ const Login = ({srcImg}) => {
                     </label>
                   </div>
                   <input
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     name
                     id="password"
                     placeholder="Enter password"
                   />
-                  <i
-                    className="fa-solid fa-eye-slash eyes-close"
-                    onclick="showPassword()"
-                  />
-                  <i
-                    className="fa-solid fa-eye eyes-open"
-                    onclick="hidePassword()"
-                  />
+                  {showPassword ? (
+                    <i
+                      className="fa-solid fa-eye eyes-open"
+                      onClick={togglePassword}
+                    />
+                  ) : (
+                    <i
+                      className="fa-solid fa-eye-slash eyes-close"
+                      onClick={togglePassword}
+                    />
+                  )}
                   <span className="form-password-message" />
                 </div>
                 <div className="btn">
-                  <button type="button" className="btn-login" onclick="logIn()">
+                  <button type="button" className="btn-login">
                     LOGIN
                     <i className="fas fa-arrow-right" />
                   </button>
@@ -198,7 +207,7 @@ const LoginWrapStyle = styled.div`
   }
 
   .eyes-open {
-    display: none;
+    display: block;
   }
 
   .eyes-close,
