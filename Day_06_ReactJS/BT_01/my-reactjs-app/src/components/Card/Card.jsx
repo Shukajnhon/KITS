@@ -16,6 +16,8 @@ const Card = ({
   bgColor,
   textCenter,
   colorTitle,
+  width,
+  height,
   ...rest
 }) => {
   return (
@@ -24,6 +26,8 @@ const Card = ({
       textCenter={textCenter}
       colorTitle={colorTitle}
       sidebar={sidebar}
+      width={width}
+      height={height}
       className="card"
       {...rest}
     >
@@ -74,7 +78,8 @@ const Card = ({
         <Button
           percent={percent}
           borderRadius={12}
-          width={115}
+          width={100}
+          height={44}
           borderColor="#E9E9E9"
           textColor="#747475"
         >
@@ -88,8 +93,8 @@ const Card = ({
 export {Card};
 
 const StyledCard = styled.div`
-  /* width: 164px;
-  height: 167px; */
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   padding: 24px;
   background: ${(props) => (props.bgColor ? props.bgColor : '#fff')};
   border-radius: 12px;

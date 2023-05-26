@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import cardNFTImg from 'assets/images/card-img-1.svg';
 import clockIcon from 'assets/images/clockIcon.svg';
 import avatarSeller from 'assets/images/avatarSeller.svg';
+import ethSmall from 'assets/images/eth-small-icon.svg';
+import {Button} from 'components/Button';
 
-export const CardNFT = () => {
+export const CardNFT = ({btn}) => {
   return (
     <CardNFTStyle>
       <div className="card-wrap">
@@ -17,6 +19,16 @@ export const CardNFT = () => {
             </div>
             <div className="time">12 : 03 : 45</div>
           </div>
+          {/* btn */}
+          {btn ? (
+            <div className="btn-place-a-bid">
+              <Button borderRadius={40} bgColor="#fff" width={144}>
+                <div className="place-a-bid-text">Place a Bid</div>
+              </Button>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
 
         {/* card body */}
@@ -33,7 +45,7 @@ export const CardNFT = () => {
               <img src={avatarSeller} alt="" />
             </div>
             <div className="seller-name">
-              <span>Ape In Love</span>
+              <span>@johnti60</span>
             </div>
           </div>
           {/* Current Bid */}
@@ -41,7 +53,7 @@ export const CardNFT = () => {
             <div className="current-bid">Current Bid</div>
             <div className="eth">
               <div className="eth-img">
-                <img src="" alt="" />
+                <img src={ethSmall} alt="ethSmall" />
               </div>
               <div className="eth-amount">
                 <div className="amount">9.10</div>
@@ -96,8 +108,13 @@ const CardNFTStyle = styled.div`
   }
 
   .card-body {
+    margin-top: 22px;
     padding: 4px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
+
   .title {
     display: flex;
     justify-content: space-between;
@@ -114,12 +131,75 @@ const CardNFTStyle = styled.div`
     color: #747475;
   }
 
+  .avatar-seller {
+    display: flex;
+  }
   .avatar-img {
     width: 28px;
     height: 28px;
     border-radius: 50%;
+    margin-right: 10px;
   }
-  .avatar-img {
+  .avatar-img img {
     width: 100%;
+  }
+
+  .seller-name span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #747475;
+  }
+
+  .bid {
+    display: flex;
+    justify-content: space-between;
+  }
+  .current-bid {
+    font-size: 16px;
+    font-weight: 700;
+    color: #747475;
+  }
+  .eth {
+    display: flex;
+    align-items: center;
+  }
+
+  .eth-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+  .eth-img img {
+    width: 100%;
+  }
+
+  .eth-amount {
+    display: flex;
+  }
+
+  .amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #27262e;
+    margin-right: 4px;
+  }
+
+  .text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #747475;
+  }
+
+  .btn-place-a-bid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .place-a-bid-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #5429ff;
   }
 `;
