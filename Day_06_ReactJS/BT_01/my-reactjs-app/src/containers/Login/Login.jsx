@@ -5,6 +5,7 @@ import googleIcon from 'assets/images/Google.svg';
 import facebookIcon from 'assets/images/facebook.svg';
 import githubIcon from 'assets/images/github.svg';
 import backgroundLogin from 'assets/images/LoginImg.svg';
+import {Logo} from 'components/Logo';
 
 const Login = ({srcImg}) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,6 +21,7 @@ const Login = ({srcImg}) => {
           {/* Login left */}
           <div className="login__left">
             <div className="login-content">
+              <Logo></Logo>
               <h2 className="login-title">Log In</h2>
               <form action="#" className="form-control">
                 <div className="form-group">
@@ -98,12 +100,6 @@ const Login = ({srcImg}) => {
             <div className="login-right-wrap">
               <div className="images">
                 <img src={backgroundLogin} alt="backgroundLogin" />
-                {/* <div className="girl-laptop">
-                  <img src={girlLaptop} alt="girl-laptop" />
-                </div>
-                <div className="cactus">
-                  <img src={catus} alt="cactus" />
-                </div> */}
               </div>
               <div className="background" />
             </div>
@@ -118,21 +114,28 @@ export default Login;
 
 const LoginWrapStyle = styled.div`
   .login-container {
-    max-width: 1920px;
+    margin: 40px auto;
   }
 
+  .logo {
+    margin: 20px 0;
+  }
+  .logo img {
+    cursor: pointer;
+  }
+  .logo-detail {
+    cursor: default;
+  }
   .login-form-wrap {
-    width: 1425px;
+    max-width: 1425px;
     display: flex;
     border-radius: 2rem;
     box-shadow: 0px 0px 24px 1px rgba(0, 0, 0, 0.1);
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* padding-bottom: 40px; */
-    /* margin: auto; */
-    /* background-color: #fff; */
+    transform: translate(-50%, -50%); */
+
     background: linear-gradient(90deg, #ffffff 0%, #bbaaff 66.67%);
   }
 
@@ -154,7 +157,8 @@ const LoginWrapStyle = styled.div`
   }
 
   .login-title {
-    margin-top: 80px;
+    text-align: center;
+    margin: 0;
     font-size: 56px;
     font-weight: 600;
   }
@@ -182,7 +186,7 @@ const LoginWrapStyle = styled.div`
   .form-group .form-label-forgot-password {
     opacity: 0.6;
     cursor: pointer;
-    color: ${Color.secondaryColor};
+    color: ${Color.pinkColor};
   }
 
   .form-group input {
@@ -284,7 +288,7 @@ const LoginWrapStyle = styled.div`
 
   .dont-have-account-text a {
     margin-left: 20px;
-    color: ${Color.secondaryColor};
+    color: ${Color.primaryColor};
   }
 
   /*  Login right */

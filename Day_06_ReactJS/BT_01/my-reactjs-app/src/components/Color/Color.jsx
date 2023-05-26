@@ -1,6 +1,6 @@
 export const Color = {
   primaryColor: '#5429FF',
-  secondaryColor: '#5429FF',
+  secondaryColor: 'rgba(84, 41, 255, 0.1);',
   whiteColor: '#fff',
   blackColor: '#000',
   textColor: '#27262E',

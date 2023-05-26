@@ -1,11 +1,14 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 body {
   font-family: 'DM Sans', sans-serif;
+  /* background-image: linear-gradient(to right, #4158D0 0%, #C850C0 46%, #FFCC70 100%); */
+
 }
 
+/* 
 .count-btn {
   width: 60px;
   height: 40px;
@@ -26,7 +29,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 /* 
 .App-logo {

@@ -1,19 +1,21 @@
 import React from 'react';
-import logo from 'assets/images/logo.svg';
-import dashBoard from 'assets/images/dashboard-icon.svg';
-import market from 'assets/images/market-icon.svg';
-import activeBids from 'assets/images/activeBids-icon.svg';
-import myPortfolio from 'assets/images/portfolio-icon.svg';
-import wallet from 'assets/images/wallet-icon.svg';
-import favorite from 'assets/images/favorite-icon.svg';
-import history from 'assets/images/history-icon.svg';
-import setting from 'assets/images/setting-icon.svg';
-import sunIcon from 'assets/images/sun-icon.svg';
-import moonIcon from 'assets/images/moon-icon.svg';
-import otherIcon from 'assets/images/other-icon.svg';
+import {ReactComponent as DashBoardIcon} from 'assets/images/dashboard-icon.svg';
+import {ReactComponent as MarketIcon} from 'assets/images/market-icon.svg';
+import {ReactComponent as ActiveBidsIcon} from 'assets/images/activeBids-icon.svg';
+import {ReactComponent as MyPortfolioIcon} from 'assets/images/portfolio-icon.svg';
+import {ReactComponent as WalletIcon} from 'assets/images/wallet-icon.svg';
+import {ReactComponent as FavoriteIcon} from 'assets/images/favorite-icon.svg';
+import {ReactComponent as HistoryIcon} from 'assets/images/history-icon.svg';
+import {ReactComponent as SettingIcon} from 'assets/images/setting-icon.svg';
+import {ReactComponent as SunIconIcon} from 'assets/images/sun-icon.svg';
+import {ReactComponent as MoonIconIcon} from 'assets/images/moon-icon.svg';
+import {ReactComponent as OtherIconIcon} from 'assets/images/other-icon.svg';
+
 import styled from 'styled-components';
 
-import {Link} from 'react-router-dom';
+import {Logo} from 'components/Logo';
+
+import {Link, NavLink} from 'react-router-dom';
 
 import {Card} from 'components/Card';
 // import {MarketIcon} from 'components/Icon';
@@ -22,54 +24,48 @@ export const Sidebar = () => {
   // console.log(market);
   return (
     <SidebarStyled>
-      <div className="logo">
-        <img src={logo} alt="logo" />
-        <div className="logo-detail">
-          <div className="logo-text">MyNFT</div>
-          <div className="logo-desc">NFT Marketplace</div>
-        </div>
-      </div>
-
+      <Logo></Logo>
       <div className="dashboard-top">
-        <NavItem
-          path="dashboard"
-          text="Dashboard"
-          src={dashBoard}
-          colortext="#5429FF"
-        ></NavItem>
-
-        {/* Market */}
-        <NavItem path="market" text="Market" src={market}>
-          {/* <MarketIcon stroke=""></MarketIcon> */}
+        <NavItem path="dashboard" text="Dashboard">
+          <DashBoardIcon></DashBoardIcon>
         </NavItem>
 
-        <NavItem
-          path="active-bids"
-          text="Active Bids"
-          src={activeBids}
-        ></NavItem>
+        {/* Market */}
+        <NavItem path="market" text="Market">
+          <MarketIcon></MarketIcon>
+        </NavItem>
+        {/* Active Bids */}
+        <NavItem path="active-bids" text="Active Bids">
+          <ActiveBidsIcon></ActiveBidsIcon>
+        </NavItem>
       </div>
       {/* Profile */}
       <div className="dashboard-profile">
         <h4 className="title">Other</h4>
         {/* My Portfolio */}
-        <NavItem
-          path="my-portfolio"
-          text="My Portfolio"
-          src={myPortfolio}
-        ></NavItem>
+        <NavItem path="my-portfolio" text="My Portfolio">
+          <MyPortfolioIcon></MyPortfolioIcon>
+        </NavItem>
 
         {/* Wallet */}
-        <NavItem path="wallet" text="Wallet" src={wallet}></NavItem>
+        <NavItem path="wallet" text="Wallet">
+          <WalletIcon></WalletIcon>
+        </NavItem>
 
         {/* Favorite */}
-        <NavItem path="favorites" text="Favorites" src={favorite}></NavItem>
+        <NavItem path="favorites" text="Favorites">
+          <FavoriteIcon></FavoriteIcon>
+        </NavItem>
 
         {/* History */}
-        <NavItem path="history" text="History" src={history}></NavItem>
+        <NavItem path="history" text="History">
+          <HistoryIcon></HistoryIcon>
+        </NavItem>
 
         {/* Settings */}
-        <NavItem path="settings" text="Settings" src={setting}></NavItem>
+        <NavItem path="settings" text="Settings">
+          <SettingIcon></SettingIcon>
+        </NavItem>
       </div>
 
       {/* Other */}
@@ -97,14 +93,17 @@ const DarkmodeBox = () => {
   return (
     <DarkModeStyled className="dark-night-mode">
       <div className="dark-night-mode-icon">
-        <img src={otherIcon} alt="otherIcon" />
+        {/* <img src={otherIcon} alt="otherIcon" /> */}
+        <OtherIconIcon></OtherIconIcon>
       </div>
       <div className="dark-night-mode-text">Light Mode</div>
       <div className="dark-night-mode-btn">
         <input type="checkbox" name="" id="darkmode-toggle" />
         <label className="darkmode-toggle-label" htmlFor="darkmode-toggle">
-          <img className="darkMode-sun" src={sunIcon} alt="sun" />
-          <img className="darkMode-moon" src={moonIcon} alt="moon" />
+          {/* <img className="darkMode-sun" src={sunIcon} alt="sun" />
+          <img className="darkMode-moon" src={moonIcon} alt="moon" /> */}
+          <SunIconIcon></SunIconIcon>
+          <MoonIconIcon></MoonIconIcon>
         </label>
       </div>
     </DarkModeStyled>
@@ -112,17 +111,19 @@ const DarkmodeBox = () => {
 };
 
 // NavItem
-const NavItem = ({text, path, colortext, src, children}) => {
+const NavItem = ({text, path, colortext, children}) => {
   //   console.log(colortext);
   return (
     <NavItemStyle colortext={colortext}>
       <div className="nav-item">
-        <div className="nav-icon">
-          <img src={src} alt="icon" />
-          {children}
-        </div>
+        <div className="nav-icon">{children}</div>
         <div className="nav-link">
-          <Link to={path}>{text}</Link>
+          <NavLink
+            className={({isActive}) => (isActive ? 'active' : 'inactive')}
+            to={path}
+          >
+            {text}
+          </NavLink>
         </div>
       </div>
     </NavItemStyle>
@@ -221,27 +222,17 @@ const NavItemStyle = styled.div`
   .nav-link a:visited {
     color: none;
   }
+  .active {
+    svg {
+      path {
+        stroke: #f30ee4;
+      }
+    }
+    color: #f30ee4;
+  }
 `;
 
 const SidebarStyled = styled.div`
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  .logo img {
-    margin-right: 20px;
-  }
-  .logo-text {
-    font-size: 28px;
-    font-weight: 700;
-  }
-  .logo-desc {
-    margin-top: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    color: #7a797d;
-  }
-
   .dashboard-other {
     margin-bottom: 100px;
   }
