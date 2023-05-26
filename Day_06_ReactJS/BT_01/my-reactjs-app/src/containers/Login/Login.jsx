@@ -1,14 +1,313 @@
-import {Layout} from 'components/Layout';
 import React from 'react';
+import styled from 'styled-components';
+import {Color} from 'components/Color';
+import googleIcon from 'assets/images/Google.svg';
+import facebookIcon from 'assets/images/facebook.svg';
+import githubIcon from 'assets/images/github.svg';
+import backgroundLogin from 'assets/images/LoginImg.svg';
 
-const Login = () => {
+const Login = ({srcImg}) => {
   return (
-    <div>
-      <Layout>
-        <h1>Login Page</h1>
-      </Layout>
-    </div>
+    <LoginWrapStyle>
+      <div class="login-container">
+        <div className="login-form-wrap">
+          {/* Login left */}
+          <div className="login__left">
+            <div className="login-content">
+              <h2 className="login-title">Log In</h2>
+              <form action="#" className="form-control">
+                <div className="form-group">
+                  <label htmlFor>Username</label>
+                  <input
+                    type="text"
+                    name
+                    id="username"
+                    placeholder="Username"
+                  />
+                  <span className="form-message" />
+                </div>
+                <div className="form-group form-password">
+                  <div className="form-label">
+                    <label className="form-label-password" htmlFor>
+                      Password
+                    </label>
+                    <label className="form-label-forgot-password" htmlFor>
+                      Forgot Password?
+                    </label>
+                  </div>
+                  <input
+                    type="password"
+                    name
+                    id="password"
+                    placeholder="Enter password"
+                  />
+                  <i
+                    className="fa-solid fa-eye-slash eyes-close"
+                    onclick="showPassword()"
+                  />
+                  <i
+                    className="fa-solid fa-eye eyes-open"
+                    onclick="hidePassword()"
+                  />
+                  <span className="form-password-message" />
+                </div>
+                <div className="btn">
+                  <button type="button" className="btn-login" onclick="logIn()">
+                    LOGIN
+                    <i className="fas fa-arrow-right" />
+                  </button>
+                  <p className="or">or continue with</p>
+                  <div className="btn-social">
+                    <div className="social-group btn-google">
+                      <button>
+                        <img src={googleIcon} alt="google" />
+                      </button>
+                    </div>
+                    <div className="social-group  btn-github">
+                      <button>
+                        <img src={githubIcon} alt="github" />
+                      </button>
+                    </div>
+                    <div className="social-group btn-facebook">
+                      <button>
+                        <img src={facebookIcon} alt="facebook" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="dont-have-account">
+                    <p className="dont-have-account-text">
+                      Don't have an account yet?
+                      <a href="#">Sign up for free</a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          {/* Login right */}
+          <div className="login__right">
+            <div className="login-right-wrap">
+              <div className="images">
+                <img src={backgroundLogin} alt="backgroundLogin" />
+                {/* <div className="girl-laptop">
+                  <img src={girlLaptop} alt="girl-laptop" />
+                </div>
+                <div className="cactus">
+                  <img src={catus} alt="cactus" />
+                </div> */}
+              </div>
+              <div className="background" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </LoginWrapStyle>
   );
 };
 
 export default Login;
+
+const LoginWrapStyle = styled.div`
+  .login-container {
+    max-width: 1920px;
+  }
+
+  .login-form-wrap {
+    width: 1425px;
+    display: flex;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 24px 1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding-bottom: 40px; */
+    /* margin: auto; */
+    /* background-color: #fff; */
+    background: linear-gradient(90deg, #ffffff 0%, #bbaaff 66.67%);
+  }
+
+  .login__left,
+  .login__right {
+    width: 50%;
+  }
+
+  /* Login Left */
+  .login__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
+
+  .login-content {
+    margin: 0 auto;
+  }
+
+  .login-title {
+    margin-top: 80px;
+    font-size: 56px;
+    font-weight: 600;
+  }
+
+  .form-control {
+    min-width: 478px;
+  }
+
+  .form-control .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-weight: 300;
+  }
+
+  .form-label {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-group .form-label-forgot-password {
+    opacity: 0.6;
+    cursor: pointer;
+    color: ${Color.secondaryColor};
+  }
+
+  .form-group input {
+    width: 100%;
+    height: 46px;
+    border-radius: 6px;
+    border: none;
+    background-color: ${Color.inputColor};
+    padding-left: 10px;
+  }
+
+  .form-password {
+    position: relative;
+  }
+
+  .form-password-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: red;
+    font-size: 14px;
+  }
+
+  .eyes-open {
+    display: none;
+  }
+
+  .eyes-close,
+  .eyes-open {
+    position: absolute;
+    top: 68%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: ${Color.pinkColor};
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  .d-block {
+    display: block;
+  }
+
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+  }
+
+  .btn-login {
+    width: 150px;
+    height: 46px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: ${Color.primaryColor};
+    cursor: pointer;
+  }
+
+  .btn p.or {
+    color: ${Color.primaryColor};
+  }
+
+  .btn-social {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-group {
+    width: 125px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-group button {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid ${Color.secondaryColor};
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .dont-have-account {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .dont-have-account-text {
+    margin-bottom: 40px;
+  }
+
+  .dont-have-account-text a {
+    margin-left: 20px;
+    color: ${Color.secondaryColor};
+  }
+
+  /*  Login right */
+  .login__right {
+    position: relative;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    /* background-color: ${Color.loginColor1}; */
+    z-index: -1;
+    border-radius: 2rem;
+  }
+  /* 
+  .login-right-wrap {
+    position: relative;
+  } */
+
+  .images {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -47%);
+    width: 540px;
+    z-index: 20;
+  }
+
+  .images img {
+    width: 100%;
+  }
+`;
