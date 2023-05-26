@@ -52,6 +52,7 @@ const SearchStyle = styled.div`
   .search-icon-wrap {
     width: 20px;
     margin: 0 14px 0 26px;
+    cursor: pointer;
   }
   .search-icon-wrap img {
     width: 100%;
@@ -77,10 +78,22 @@ const SearchStyle = styled.div`
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   .notify-icon {
     width: 20px;
     height: 20px;
     color: #7a797d;
+  }
+
+  .user-img {
+    width: 56px;
+    height: 56px;
+    border: radius 50%;
+    cursor: pointer;
+  }
+  .user-img img {
+    width: 100%;
+    border: radius 50%;
   }
 `;
