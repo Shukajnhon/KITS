@@ -42,29 +42,29 @@ const Home = () => {
                 title="Revenue"
                 amount={5.0}
                 percent={12.3}
-                width="100px"
-                height="120px"
+                width="104px"
+                height="118px"
               ></Card>
               <Card
                 title="Spending"
                 amount={2.0}
                 percent={8.1}
-                width="100px"
-                height="120px"
+                width="104px"
+                height="118px"
               ></Card>
               <Card
                 title="ROI"
                 percent={-5.1}
                 content="+14.02"
-                width="100px"
-                height="120px"
+                width="104px"
+                height="118px"
               ></Card>
               <Card
                 title="Estimated"
                 amount={7.0}
                 percent={3.2}
-                width="100px"
-                height="120px"
+                width="104px"
+                height="118px"
               ></Card>
             </div>
 
@@ -130,10 +130,13 @@ const ContentRightStyle = styled.div`
 
   .widget {
     margin-top: 32px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 12px;
   }
+
   .top-creator {
     margin-top: 40px;
     display: flex;

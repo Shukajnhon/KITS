@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button} from 'components/Button';
 import creatorImg from 'assets/images/creatorImg1.svg';
 import styled from 'styled-components';
@@ -12,42 +12,50 @@ export const Creator = ({title, srcImg, name, userName}) => {
         <div className="title-link">See All</div>
       </div>
       <div className="creators-wrap">
-        <CreatorItem srcImg={creatorImg} isFollow={true}></CreatorItem>
         <CreatorItem srcImg={creatorImg}></CreatorItem>
-        <CreatorItem srcImg={creatorImg} isFollow={true}></CreatorItem>
-        <CreatorItem srcImg={creatorImg}></CreatorItem>
-        <CreatorItem srcImg={creatorImg}></CreatorItem>
-        <CreatorItem srcImg={creatorImg}></CreatorItem>
-        <CreatorItem srcImg={creatorImg}></CreatorItem>
+        <CreatorItem srcImg={creatorImg} indexNumber={2}></CreatorItem>
+        <CreatorItem srcImg={creatorImg} indexNumber={3}></CreatorItem>
+        <CreatorItem srcImg={creatorImg} indexNumber={4}></CreatorItem>
+        <CreatorItem srcImg={creatorImg} indexNumber={5}></CreatorItem>
+        <CreatorItem srcImg={creatorImg} indexNumber={6}></CreatorItem>
+        <CreatorItem srcImg={creatorImg} indexNumber={7}></CreatorItem>
       </div>
     </CreatorStyled>
   );
 };
 
-const CreatorItem = ({srcImg, name, userName, isFollow}) => {
+const CreatorItem = ({srcImg, name, userName, indexNumber}) => {
+  const [follow, setFollow] = useState(false);
+
+  const toggleFollowBtn = () => {
+    setFollow(!follow);
+    // console.log('clicked');
+  };
+
   return (
     <div className="creators">
-      <div className="number">1.</div>
+      <div className="number">{indexNumber || 1}.</div>
       {/* info */}
       <div className="creators-info">
         <div className="creators-img">
           <img src={srcImg} alt="creatorImg" />
         </div>
         <div className="creators-detail">
-          <div className="name">Michael Jordan</div>
-          <div className="user-name">@jordan_</div>
+          <div className="name">{name || 'Michael Jordan'}</div>
+          <div className="user-name">{userName || '@jordan_'}</div>
         </div>
       </div>
       {/* btn */}
-      <CreatorBtnStyle className="creator-btn" isFollow={isFollow}>
+      <CreatorBtnStyle className="creator-btn" follow={follow}>
         <Button
           borderRadius={20}
-          bgColor={isFollow ? Color.primaryColor : Color.secondaryColor}
+          bgColor={follow ? Color.primaryColor : Color.secondaryColor}
           width={80}
           height={34}
+          onClick={toggleFollowBtn}
         >
           <div className="creator-btn-text">
-            {isFollow ? 'Following' : 'Follow'}
+            {follow ? 'Following' : 'Follow'}
           </div>
         </Button>
       </CreatorBtnStyle>
@@ -58,7 +66,7 @@ const CreatorItem = ({srcImg, name, userName, isFollow}) => {
 const CreatorBtnStyle = styled.div`
   .creator-btn-text {
     color: ${(props) =>
-      props.isFollow ? `${Color.whiteColor}` : `${Color.primaryColor}`};
+      props.follow ? `${Color.whiteColor}` : `${Color.primaryColor}`};
   }
 `;
 

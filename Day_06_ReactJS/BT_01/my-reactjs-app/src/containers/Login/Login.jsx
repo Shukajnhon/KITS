@@ -88,7 +88,7 @@ const Login = ({srcImg}) => {
                   <div className="dont-have-account">
                     <p className="dont-have-account-text">
                       Don't have an account yet?
-                      <a href="#">Sign up for free</a>
+                      <a href="/login">Sign up for free</a>
                     </p>
                   </div>
                 </div>

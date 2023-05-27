@@ -95,7 +95,7 @@ export {Card};
 const StyledCard = styled.div`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  padding: 24px;
+  padding: 22px;
   background: ${(props) => (props.bgColor ? props.bgColor : '#fff')};
   border-radius: 12px;
   font-size: 12px;

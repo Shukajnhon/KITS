@@ -7,17 +7,18 @@ import {ReactComponent as WalletIcon} from 'assets/images/wallet-icon.svg';
 import {ReactComponent as FavoriteIcon} from 'assets/images/favorite-icon.svg';
 import {ReactComponent as HistoryIcon} from 'assets/images/history-icon.svg';
 import {ReactComponent as SettingIcon} from 'assets/images/setting-icon.svg';
-import {ReactComponent as SunIconIcon} from 'assets/images/sun-icon.svg';
-import {ReactComponent as MoonIconIcon} from 'assets/images/moon-icon.svg';
-import {ReactComponent as OtherIconIcon} from 'assets/images/other-icon.svg';
+import sunIcon from 'assets/images/sun-icon.svg';
+import moonIcon from 'assets/images/moon-icon.svg';
+import {ReactComponent as OtherIcon} from 'assets/images/other-icon.svg';
 
 import styled from 'styled-components';
 
 import {Logo} from 'components/Logo';
 
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 import {Card} from 'components/Card';
+import {Color} from 'components/Color';
 // import {MarketIcon} from 'components/Icon';
 
 export const Sidebar = () => {
@@ -26,46 +27,61 @@ export const Sidebar = () => {
     <SidebarStyled>
       <Logo></Logo>
       <div className="dashboard-top">
-        <NavItem path="dashboard" text="Dashboard">
-          <DashBoardIcon></DashBoardIcon>
-        </NavItem>
+        <NavLink to="/dashboard">
+          <NavItem text="Dashboard">
+            <DashBoardIcon></DashBoardIcon>
+          </NavItem>
+        </NavLink>
 
         {/* Market */}
-        <NavItem path="market" text="Market">
-          <MarketIcon></MarketIcon>
-        </NavItem>
+        <NavLink to="/market">
+          <NavItem text="Market">
+            <MarketIcon></MarketIcon>
+          </NavItem>
+        </NavLink>
         {/* Active Bids */}
-        <NavItem path="active-bids" text="Active Bids">
-          <ActiveBidsIcon></ActiveBidsIcon>
-        </NavItem>
+        <NavLink to="/active-bids">
+          <NavItem text="Active Bids">
+            <ActiveBidsIcon></ActiveBidsIcon>
+          </NavItem>
+        </NavLink>
       </div>
       {/* Profile */}
       <div className="dashboard-profile">
         <h4 className="title">Other</h4>
         {/* My Portfolio */}
-        <NavItem path="my-portfolio" text="My Portfolio">
-          <MyPortfolioIcon></MyPortfolioIcon>
-        </NavItem>
+        <NavLink to="/my-portfolio">
+          <NavItem text="My Portfolio">
+            <MyPortfolioIcon></MyPortfolioIcon>
+          </NavItem>
+        </NavLink>
 
         {/* Wallet */}
-        <NavItem path="wallet" text="Wallet">
-          <WalletIcon></WalletIcon>
-        </NavItem>
+        <NavLink to="/wallet">
+          <NavItem text="Wallet">
+            <WalletIcon></WalletIcon>
+          </NavItem>
+        </NavLink>
 
         {/* Favorite */}
-        <NavItem path="favorites" text="Favorites">
-          <FavoriteIcon></FavoriteIcon>
-        </NavItem>
+        <NavLink to="/favorites">
+          <NavItem text="Favorites">
+            <FavoriteIcon></FavoriteIcon>
+          </NavItem>
+        </NavLink>
 
         {/* History */}
-        <NavItem path="history" text="History">
-          <HistoryIcon></HistoryIcon>
-        </NavItem>
-
+        <NavLink to="/history">
+          <NavItem text="History">
+            <HistoryIcon></HistoryIcon>
+          </NavItem>
+        </NavLink>
         {/* Settings */}
-        <NavItem path="settings" text="Settings">
-          <SettingIcon></SettingIcon>
-        </NavItem>
+        <NavLink to="/settings">
+          <NavItem text="Settings">
+            <SettingIcon></SettingIcon>
+          </NavItem>
+        </NavLink>
       </div>
 
       {/* Other */}
@@ -94,37 +110,30 @@ const DarkmodeBox = () => {
     <DarkModeStyled className="dark-night-mode">
       <div className="dark-night-mode-icon">
         {/* <img src={otherIcon} alt="otherIcon" /> */}
-        <OtherIconIcon></OtherIconIcon>
+        <OtherIcon></OtherIcon>
       </div>
       <div className="dark-night-mode-text">Light Mode</div>
       <div className="dark-night-mode-btn">
         <input type="checkbox" name="" id="darkmode-toggle" />
         <label className="darkmode-toggle-label" htmlFor="darkmode-toggle">
-          {/* <img className="darkMode-sun" src={sunIcon} alt="sun" />
-          <img className="darkMode-moon" src={moonIcon} alt="moon" /> */}
-          <SunIconIcon></SunIconIcon>
-          <MoonIconIcon></MoonIconIcon>
+          <img className="darkMode-sun" src={sunIcon} alt="sun" />
+          <img className="darkMode-moon" src={moonIcon} alt="moon" />
+          {/* <SunIconIcon></SunIconIcon>
+          <MoonIconIcon></MoonIconIcon> */}
         </label>
       </div>
     </DarkModeStyled>
   );
 };
-
-// NavItem
-const NavItem = ({text, path, colortext, children}) => {
+// className={({isActive}) => (isActive ? 'active' : 'inactive')}
+// NavItem    || Edit Nav
+const NavItem = ({text, colortext, children}) => {
   //   console.log(colortext);
   return (
     <NavItemStyle colortext={colortext}>
       <div className="nav-item">
         <div className="nav-icon">{children}</div>
-        <div className="nav-link">
-          <NavLink
-            className={({isActive}) => (isActive ? 'active' : 'inactive')}
-            to={path}
-          >
-            {text}
-          </NavLink>
-        </div>
+        <div className="nav-link">{text}</div>
       </div>
     </NavItemStyle>
   );
@@ -135,6 +144,11 @@ const DarkModeStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .dark-night-mode-text {
+    color: #7a797d;
+    font-weight: 600;
+  }
 
   .darkmode-toggle-label {
     width: 56px;
@@ -214,27 +228,31 @@ const NavItemStyle = styled.div`
     line-height: 24px;
     font-size: 16px;
     font-weight: 700;
-  }
-  .nav-link a {
-    text-decoration: none;
     color: ${(props) => (props.colortext ? props.colortext : '#7A797D')};
-  }
-  .nav-link a:visited {
-    color: none;
-  }
-  .active {
-    svg {
-      path {
-        stroke: #f30ee4;
-      }
-    }
-    color: #f30ee4;
+    cursor: pointer;
   }
 `;
 
 const SidebarStyled = styled.div`
   .dashboard-other {
     margin-bottom: 100px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .active {
+    svg {
+      path {
+        stroke: ${Color.primaryColor};
+      }
+    }
+    color: ${Color.primaryColor};
+
+    .nav-link {
+      color: ${Color.primaryColor};
+    }
   }
 `;
 
