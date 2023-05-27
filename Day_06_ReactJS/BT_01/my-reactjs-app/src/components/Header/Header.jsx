@@ -97,12 +97,15 @@ const SearchStyle = styled.div`
     color: #7a797d;
   }
 
+  .user {
+    position: relative;
+  }
+
   .user-img {
     width: 56px;
     height: 56px;
     border: radius 50%;
     cursor: pointer;
-    position: relative;
   }
   .user-img img {
     width: 100%;
@@ -118,7 +121,7 @@ const SearchStyle = styled.div`
     height: 100px;
     position: absolute;
     /* top: 0; */
-    right: 0;
+    right: -40px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);

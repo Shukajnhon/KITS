@@ -113,6 +113,8 @@ const Login = ({srcImg}) => {
 export default Login;
 
 const LoginWrapStyle = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
   .login-container {
     margin: 40px auto;
   }
