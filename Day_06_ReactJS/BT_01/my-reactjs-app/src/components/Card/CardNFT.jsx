@@ -75,10 +75,12 @@ const CardNFTStyle = styled.div`
 
   .card-wrap {
     padding: 10px;
+    cursor: default;
   }
   .card-img {
     position: relative;
     border-radius: 12px;
+    cursor: pointer;
   }
 
   .card-time {

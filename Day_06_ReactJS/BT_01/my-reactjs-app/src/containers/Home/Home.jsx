@@ -24,9 +24,8 @@ const Home = () => {
                   <div className="title-link-item">Utility</div>
                 </div>
               </div>
-
               <div className="card">
-                <CardNFT></CardNFT>
+                <CardNFT btn={true}></CardNFT>
                 <CardNFT></CardNFT>
                 <CardNFT></CardNFT>
                 <CardNFT></CardNFT>
